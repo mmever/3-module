@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 54</title>
+    <style>
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 24px;
+            background-color: #2196F3;
+            cursor: pointer;
+            color: white;
+        }
+
+        .grid {
+            display: flex;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            <button class="button js-button-click" type="button"> Нажми меня </button>
+            <button class="button js-button-add" type="button"> Добавить событие </button>
+            <button class="button js-button-remove" type="button"> Удалить событие </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const clickButton = document.querySelector('.js-button-click');
+            const addButton = document.querySelector('.js-button-add');
+            const removeButton = document.querySelector('.js-button-remove');
+
+            // Функция, которая будет вызываться при клике на js-button-click
+            function handleClick() {
+                alert('CLICK!');
+            }
+
+            // Устанавливаем обработчик клика при нажатии на js-button-add
+            addButton.addEventListener('click', function () {
+                clickButton.addEventListener('click', handleClick, { once: true });
+                console.log('Событие клика установлено');
+            });
+
+            // Удаляем обработчик клика при нажатии на js-button-remove
+            removeButton.addEventListener('click', function () {
+                clickButton.removeEventListener('click', handleClick);
+                console.log('Событие клика удалено');
+            });
+        });
+    </script>
+</body>
+</html>

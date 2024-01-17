@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 48</title>
+    <style>
+        .container{
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A</li>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. B</li>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. C</li>
+        </ul>
+
+        <ul>
+            <li>Список 1</li>
+            <li>Список 2</li>
+            <li>Список 3</li>
+        </ul>
+
+        <ul>
+            <li>Дело №1</li>
+            <li>Дело №2</li>
+            <li>Дело №3</li>
+        </ul>
+    </div>
+
+    <script>
+        // Найти 1ый элемент списка и сохранить его в переменную first
+        const first = document.querySelector('.container ul li:first-child');
+        console.dir(first);
+
+        // Найти каждый 1ый элемент списков и сохранить в переменную list (массив)
+        const list = document.querySelectorAll('.container ul li:first-child');
+        
+        // Вывести в консоль переменную first
+        console.dir(first);
+
+        // Пройтись циклом по массиву list и вывести каждый элемент в консоль
+        list.forEach((item, index) => {
+            console.log(`List item ${index + 1}:`, item.textContent.trim());
+        });
+    </script>
+</body>
+</html>

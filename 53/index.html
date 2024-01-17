@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 53</title>
+    <style>
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 24px;
+            background-color: #2196F3;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button" type="button"> <span>А</span> Нажми на меня  <span>Я</span> </button>
+    </div>
+
+    <script>
+        const button = document.querySelector('.button');
+
+        button.addEventListener('click', (event) => {
+            // Используем currentTarget для доступа к текущему элементу
+            const currentButton = event.currentTarget;
+
+            // Выводим информацию в консоль
+            console.log('className:', currentButton.className);
+            console.log('textContent:', currentButton.textContent);
+            console.log('innerHTML:', currentButton.innerHTML);
+            console.log('nodeName (tagName):', currentButton.nodeName);
+
+            console.log('previousElementSibling:', currentButton.previousElementSibling);
+            console.log('previousSibling:', currentButton.previousSibling);
+            console.log('nextSibling:', currentButton.nextSibling);
+            console.log('nextElementSibling:', currentButton.nextElementSibling);
+            console.log('firstChild:', currentButton.firstChild);
+            console.log('firstElementChild:', currentButton.firstElementChild);
+            console.log('lastChild:', currentButton.lastChild);
+            console.log('lastElementChild:', currentButton.lastElementChild);
+            console.log('parentElement:', currentButton.parentElement);
+            console.log('childNodes:', currentButton.childNodes);
+            console.log('children:', currentButton.children);
+        });
+    </script>
+</body>
+</html>
